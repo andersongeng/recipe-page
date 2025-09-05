@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url(/recipe-page-main/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url(/recipe-page-main/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url(/recipe-page-main/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url(/recipe-page-main/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@layer reset {
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+p {
+    line-height: 1.3;
+    font-size: 16px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+}
+
+@layer colors {
+    :root {
+        --c-white: hsl(0, 0%, 100%);
+        --c-stone-100: hsl(30, 54%, 90%);
+        --c-stone-150: hsl(30, 18%, 87%);
+        --c-stone-600: hsl(30, 10%, 34%);
+        --c-stone-900: hsl(24, 5%, 18%);
+        --c-brown-800: hsl(14, 45%, 36%);
+        --c-rose-800: hsl(332, 51%, 32%);
+        --c-rose-50: hsl(330, 100%, 98%);
+    }
+}
+
+@layer typography {
+    :root {
+        /* Font families */
+        --ff-Young-Serif: 'Young Serif', serif;
+        --ff-sans: 'Outfit', sans-serif;
+
+        /*Font weights */
+        --fw-400: 400;
+        --fw-600: 600;
+        --fw-700: 700;
+    }
+
+    body {
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-400);
+    }
+
+    h1, h2, h3 {
+        font-family: var(--ff-Young-Serif);
+    }
+}
+
+@layer elements {
+    main {
+        padding: 2rem 2rem;
+        max-width: 100%;
+    }
+    
+    main > h1 {
+        color: var(--c-stone-900);
+        font-size: calc(37 / 16 * 1rem);
+        padding-bottom: 2rem;
+    }
+
+    main > p {
+        color: var(--c-stone-600);
+        margin-bottom: 2em;
+    }
+
+    .preparation {
+        background-color: var(--c-rose-50);
+        border-radius: 1em;
+        padding: 2em;
+        margin-bottom: 2em;
+    }
+
+    .preparation h2 {
+        margin-bottom: 1em;
+        color: var(--c-rose-800);
+    }
+
+    .custom-list {
+        list-style-type: none;
+    }
+
+    .custom-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+
+    }
+
+    .custom-list li::before {
+        content: "•";
+        font-size: 1.2em;
+        line-height: 1;
+        margin-top: 0.3em;
+        margin-right: 0.2em;
+    }
+
+    .ingredients {
+        color: var(--c-brown-800);
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--c-stone-150);
+        margin-bottom: 2em;
+    }
+
+    .ingredients h2 {
+        padding-bottom: 1em;
+    }
+
+    .ingredients li::marker {
+        color: var(--c-brown-800);
+    }
+
+    .ingredients li {
+        margin-bottom: 0.5em;
+        color: var(--c-stone-600);
+
+    }
+
+    .instructions {
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--c-stone-150);
+        margin-bottom: 2em;
+    }
+
+    .instructions h2 {
+        color: var(--c-brown-800);
+        padding-bottom: 1em;
+    }
+
+    .instructions ol {
+        list-style-position: outside;
+        padding-left: 1em;
+    }
+
+    .instructions li strong {
+        color: var(--c-stone-900);
+    }
+
+    .instructions li::marker {
+        color: var(--c-brown-800);
+        font-weight: var(--fw-700);
+    }
+
+    .instructions li {
+        padding-left: 1em;
+        padding-bottom: 1em;
+    }
+
+    /* .nutrition {} */
+
+    .nutrition h2 {
+        color: var(--c-brown-800);
+        padding-bottom: 1em;
+    }
+
+    .nutrition p {
+        color: var(--c-stone-600);
+        padding-bottom: 1em;
+    }
+
+    .nutrition table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    .nutrition th {
+        color: var(--c-stone-600);
+        font-weight: var(--fw-400);
+    }
+
+    .nutrition th, td {
+        border-bottom: 1px solid var(--c-stone-150);
+        /* text-align: center; */
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
